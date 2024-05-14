@@ -7,8 +7,8 @@ function greet( aGreeting ){
 	return aGreeting;
 }
 
- let greeting = sayHello();
- console.log( greeting )
+//  let greeting = sayHello();
+//  console.log( greeting )
  
  greeting = sayHi();
  console.log( greeting )
@@ -24,11 +24,11 @@ greeting = greet("good morning");
 // function definition
 function  add(){
 	
-  let number1 = 10;
-  let result = 0;
-  result = result + number1;
+    let number1 = 10;
+    let result = 0;
+    result = result + number1;
 
-	return result;
+    return result;
 }
 
 //function call
@@ -61,7 +61,32 @@ let sayHello3 = () => {
 
 let sayHello4 = () => { return "Hello3";}
 	
-let greet = ( aGreeting ) => aGreeting
+// let greet = ( aGreeting ) => aGreeting
 
 
 console.log( greet("assalamu alaikum") );
+
+
+
+const car = {
+	
+	door: 4,
+	window: 4,
+	seat: {
+		front:['A1','A2'],
+	  back:3
+	},
+	fuel: '10 ltr',
+	hasSunRoof: true,
+	
+	start:function(){
+		alert("car has started")
+	},
+	
+	stop: function(){
+		alert("car has stopped")
+	},
+	
+	run: () => alert("I am running"),
+  
+  }
