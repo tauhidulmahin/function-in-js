@@ -11,10 +11,12 @@ function td(txtNode){
 
 }
 
-function tr(tdNode){
+function tr(tdNode, tdNode2, tdNode3){
 
   let tr = document.createElement("TR")
-  tr.appendChild(tdNode)
+  tr.appendChild(tdNode);
+  tr.appendChild(tdNode2);
+  tr.appendChild(tdNode3);
   return tr;
 
 }
@@ -23,15 +25,8 @@ let td11 = td(col11);
 let td22 = td(col22);
 let td33 = td(col33);
 
-function showtr() {
-  let tbody = document.querySelector('#sampleTable tbody');
+let trX = tr(td11, td22, td33)
 
-  tbody.appendChild(td11);
-  tbody.appendChild(td22);
-  tbody.appendChild(td33);
-    
-}
+let tbody = document.querySelector('#sampleTable tbody');
 
-// let trX = tr(td11);
-
-// tbody.appendChild(trX);
+tbody.appendChild(trX);
