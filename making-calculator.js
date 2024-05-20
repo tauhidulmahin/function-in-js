@@ -27,6 +27,6 @@ for (i = 0; i < 10; i++) {
         btn.appendChild(txtNode);
         buttonPad.appendChild(btn);
 
-        counter = counter + 3;
+        counter += 3;
     }
 }
