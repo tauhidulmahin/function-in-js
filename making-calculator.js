@@ -2,31 +2,45 @@
 let screen = document.getElementById("screen");
 
 // display digit from 0 to 9
-let buttonPad = document.getElementById("buttonPad");
-let txtNode = null;
-let btn = null;
 let counter = 3;
 
 for (i = 0; i < 10; i++) {
 
     // i expect to show mutton 3x3 column
-
-    if (i < counter) {
-
-        txtNode = document.createTextNode(i);
-        btn = document.createElement("BUTTON");
-        btn.appendChild(txtNode);
-        buttonPad.appendChild(btn);
-
-    } else {
+    if (i % 3 === 0) {
         br = document.createElement("BR");
-        buttonPad.appendChild(br);
-
-        txtNode = document.createTextNode(i);
-        btn = document.createElement("BUTTON");
-        btn.appendChild(txtNode);
-        buttonPad.appendChild(btn);
-
-        counter += 3;
+        numberPad.appendChild(br);
     }
+
+    addButtonToNumberPad(i)
+
 }
+addButtonToNumberPad('=')
+addButtonToNumberPad('c')
+function addButtonToNumberPad(btnValue) {
+    let txtNode = null;
+    let btn = null;
+    txtNode = document.createTextNode(btnValue);
+    btn = document.createElement("BUTTON");
+    btn.setAttribute("data-digitOrSymbol", btnValue)
+    btn.setAttribute("id", "myId_" + btnValue)
+    btn.onclick = (evt) => { //add event listener
+        alert(evt.target.getAttribute("data-digitOrSymbol"))
+        // alert(evt.target.dataset.digitOrSymbol) //should work check later
+    }
+    btn.appendChild(txtNode);
+    let numberPad = document.getElementById("numberPad");
+    numberPad.appendChild(btn);
+}
+
+// if (i >= counter) {
+//     br = document.createElement("BR");
+//     numberPad.appendChild(br);
+//     counter += 3;
+
+// }
+
+//riskey
+// btn.onclick = (evt) => {
+//     alert(evt.target.firstChild.nodeValue)
+// }
