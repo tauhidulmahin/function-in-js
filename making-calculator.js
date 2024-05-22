@@ -3,8 +3,15 @@ let screen = document.getElementById("screen");
 
 // display digit from 0 to 9
 let counter = 3;
-
-for (i = 0; i < 10; i++) {
+addButtonToNumberPad('c');
+addButtonToNumberPad('%');
+addButtonToNumberPad('+');
+br = document.createElement("BR");
+numberPad.appendChild(br);
+addButtonToNumberPad('-');
+addButtonToNumberPad('*');
+addButtonToNumberPad('/');
+for (i = 9; i >= 0; i--) {
 
     // i expect to show mutton 3x3 column
     if (i % 3 === 0) {
@@ -12,11 +19,11 @@ for (i = 0; i < 10; i++) {
         numberPad.appendChild(br);
     }
 
-    addButtonToNumberPad(i)
+    addButtonToNumberPad(i);
 
 }
-addButtonToNumberPad('=')
-addButtonToNumberPad('c')
+addButtonToNumberPad('.');
+addButtonToNumberPad('=');
 function addButtonToNumberPad(btnValue) {
     let txtNode = null;
     let btn = null;
